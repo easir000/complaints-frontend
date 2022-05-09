@@ -14,20 +14,11 @@ import { axiosInstance } from "../../utils/axiosInterceptor.js";
 import { Divider, Button, Space, message, Skeleton } from "antd";
 import { Link } from "react-router-dom";
 import "./MyTables.css";
-import SubjectModal from "./SubjectModal.js";
-import ShareModal from "./ShareModal.js";
+
 import OwnershipDisplay from "./OwnershipDisplay.js";
 import axios from "axios";
 
-const days = [
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-  "Sunday",
-];
+
 class MyTables extends Component {
   constructor(props) {
     super(props);
@@ -158,66 +149,15 @@ class MyTables extends Component {
       });
   }
   componentDidMount() {
-    let path = `https://realtimetables.netlify.app/${this.props.history.location.pathname}`;
+    let path = `./${this.props.history.location.pathname}`;
     this.clock();
     setInterval(this.clock, 1000);
     this.fetchTableDetails();
   }
-  createColumns(periods) {
-    var columns = [];
-    let dayCol = {
-      title: "Day",
-      dataIndex: "Day",
-      key: "Day",
-      render: (day) => {
-        return <div style={{ fontWeight: 700 }}>{day}</div>;
-      },
-    };
-    columns.push(dayCol);
-    periods.map((period, index) => {
-      let temp = {};
-      temp["title"] = period[1];
-      temp["dataIndex"] = index + 1;
-      temp["key"] = index + 1;
-      columns.push(temp);
-    });
-    this.setState({
-      ...this.state,
-      columns: columns,
-    });
-  }
-  createData(data) {
-    var tabledata = [];
-    data.map((row, index) => {
-      var temp = {};
-      temp["key"] = index;
-      temp["Day"] = row.day;
-      let merged = { ...temp, ...row.schedule };
+ 
+  
 
-      tabledata.push(merged);
-    });
-    this.setState({
-      ...this.state,
-      data: tabledata,
-    });
-  }
-  clock() {
-    // We create a new Date object and assign it to a variable called "time".
-    var time = new Date(),
-      // Access the "getHours" method on the Date object with the dot accessor.
-      hours = time.getHours(),
-      // Access the "getMinutes" method with the dot accessor.
-      minutes = time.getMinutes(),
-      seconds = time.getSeconds();
-    function harold(standIn) {
-      if (standIn < 10) {
-        standIn = "0" + standIn;
-      }
-      return standIn;
-    }
-    var str = `${harold(hours)}:${harold(minutes)}:${harold(seconds)}`;
-    this.setState({ ...this.state, curTime: str });
-  }
+  
   handleMakeRequest() {
     const tableId = this.props.history.location.pathname.split("/")[2];
     this.setState({
@@ -308,7 +248,7 @@ class MyTables extends Component {
               <div className="table_name">
                 My Tables/{this.state.tableName}{" "}
                 <ShareModal
-                  pathname={`https://realtimetables.netlify.app${this.props.history.location.pathname}`}
+                  pathname={`./${this.props.history.location.pathname}`}
                 />
               </div>
 

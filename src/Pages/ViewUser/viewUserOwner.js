@@ -133,7 +133,7 @@ class ViewUser extends Component {
                   src={
                     <Image
                       style={{ height: "200px" }}
-                      src={`https://real-time-tables.herokuapp.com/${this.state.userData.profilePic}`}
+                      src={`./${this.state.userData.profilePic}`}
                     />
                   }
                 ></Avatar>

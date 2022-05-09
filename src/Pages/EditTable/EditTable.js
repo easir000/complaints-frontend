@@ -23,7 +23,6 @@ class EditTable extends Component {
       tableName: null,
       columns: null,
       data: null,
-      subjects: null,
       isActive: false,
       loading: false,
       btnLoading: false,

@@ -1,0 +1,63 @@
+.mytable_btn {
+  text-align: center;
+  margin-top: 10px;
+}
+#tables.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal)
+  .ant-menu-item-selected {
+  background-color: #f05454;
+}
+#col_tables.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal)
+  .ant-menu-item-selected {
+  background-color: #f05454;
+}
+.add_btn {
+  text-align: center;
+  font-size: 40px;
+  color: #f05454;
+  cursor: pointer;
+  margin-bottom: 10px;
+  margin-top: -10px;
+  background-color: #436080c5;
+  border-radius: 80px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.add_btn:hover {
+  color: #30475e;
+  background-color: #f05454;
+}
+
+#col_tables::-webkit-scrollbar {
+  display: none;
+}
+#tables::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+#tables::-webkit-scrollbar-track {
+  background: #3b5875;
+}
+
+/* Handle */
+#tables::-webkit-scrollbar-thumb {
+  background: #8fa4b9;
+  border-radius: 10px;
+  
+}
+
+/* Handle on hover */
+#tables::-webkit-scrollbar-thumb:hover {
+  background: #5c748b;
+}
+#static_text{
+  font-weight: 700;
+  margin-top: 15px;
+  font-size: 1.3em;
+  border: 1x solid #5c748b;
+  text-align: center;
+  color: white; 
+}
+#static_text:focus{
+  background-color: ghostwhite;
+}
